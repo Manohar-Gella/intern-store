@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Gella Job Info</title>
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Add Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -12,7 +14,18 @@
             min-height: 100vh;
         }
         main {
-            flex-grow: 1;
+            flex: 1;
+        }
+        .sidebar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .sidebar-visible {
+            transform: translateX(0);
+            opacity: 1;
         }
     </style>
 </head>
@@ -20,32 +33,60 @@
     <header class="bg-blue-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Gella Job Info</h1>
-            <nav class="space-x-4">
+            <button class="block md:hidden" id="nav-toggle">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M1 5a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 11a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 17a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <nav class="hidden md:flex space-x-4 nav-menu">
                 <a href="index.html" class="hover:underline">Home</a>
                 <a href="about.html" class="hover:underline">About</a>
                 <a href="contact.html" class="hover:underline">Contact</a>
             </nav>
         </div>
     </header>
+    <div class="sidebar bg-blue-800 text-white p-4 fixed top-0 left-0 h-full w-64 sidebar-hidden md:hidden">
+        <ul class="flex flex-col space-y-2">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
     <main class="container mx-auto my-8">
-        <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
-        <div class="flex justify-center items-center gap-6">
-            <a href="https://www.instagram.com/manohargella/" target="_blank">
-                <img src="https://img.icons8.com/fluent/96/000000/instagram-new.png" alt="Instagram Logo" class="w-20 h-20">
-            </a>
-            <a href="https://www.linkedin.com/in/manohar-gella-2926bb24b/" target="_blank">
-                <img src="https://img.icons8.com/color/96/000000/linkedin.png" alt="LinkedIn Logo" class="w-20 h-20">
-            </a>
-            <a href="https://github.com/Manohar-Gella" target="_blank">
-                <img src="https://img.icons8.com/ios/96/000000/github--v1.png" alt="GitHub Logo" class="w-20 h-20">
-            </a>
-            <a href="https://twitter.com/imanohargella" target="_blank">
-                <img src="https://img.icons8.com/color/96/000000/twitter--v1.png" alt="Twitter Logo" class="w-20 h-20">
-            </a>
+        <div class="contact-content">
+            <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+            <p class="mb-4">Feel free to reach out to us through any of the following social media platforms:</p>
+            <div class="flex justify-around">
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/instagram-1869020-1583142.png" alt="Instagram" class="w-16 h-16">
+                </a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/linkedin-1869022-1583144.png" alt="LinkedIn" class="w-16 h-16">
+                </a>
+                <a href="https://github.com/yourprofile" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/github-1869023-1583145.png" alt="GitHub" class="w-16 h-16">
+                </a>
+                <a href="https://twitter.com/yourprofile" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/twitter-1869021-1583143.png" alt="Twitter" class="w-16 h-16">
+                </a>
+            </div>
         </div>
     </main>
     <footer class="bg-blue-800 text-white text-center p-4">
         <p>&copy; 2024 Gella Job Info. All Rights Reserved.</p>
     </footer>
+    <script>
+        // JavaScript to toggle sidebar on mobile
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar.classList.contains('sidebar-hidden')) {
+                sidebar.classList.remove('sidebar-hidden');
+                sidebar.classList.add('sidebar-visible');
+            } else {
+                sidebar.classList.remove('sidebar-visible');
+                sidebar.classList.add('sidebar-hidden');
+            }
+        });
+    </script>
 </body>
 </html>

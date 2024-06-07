@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Gella Job Info</title>
+    <title>Home - Gella Job Info</title>
     <link href="css/styles.css" rel="stylesheet">
     <!-- Add Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .sidebar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .sidebar-visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-800 text-white p-4">
@@ -24,7 +45,7 @@
             </nav>
         </div>
     </header>
-    <div class="sidebar bg-blue-800 text-white p-4 hidden">
+    <div class="sidebar bg-blue-800 text-white p-4 fixed top-0 left-0 h-full w-64 sidebar-hidden md:hidden">
         <ul class="flex flex-col space-y-2">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -32,9 +53,9 @@
         </ul>
     </div>
     <main class="container mx-auto my-8">
-        <div class="about-content">
-            <h2 class="text-3xl font-bold mb-4">About Us</h2>
-            <p>Welcome to Gella Job Info, your go-to portal for career options and insights for computer science students and enthusiasts!</p>
+        <div class="home-content">
+            <h2 class="text-3xl font-bold mb-4">Welcome to Gella Job Info</h2>
+            <p>Your go-to portal for career options and insights for computer science students and enthusiasts!</p>
             <!-- Remaining content... -->
         </div>
     </main>
@@ -44,7 +65,14 @@
     <script>
         // JavaScript to toggle sidebar on mobile
         document.getElementById('nav-toggle').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('hidden');
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar.classList.contains('sidebar-hidden')) {
+                sidebar.classList.remove('sidebar-hidden');
+                sidebar.classList.add('sidebar-visible');
+            } else {
+                sidebar.classList.remove('sidebar-visible');
+                sidebar.classList.add('sidebar-hidden');
+            }
         });
     </script>
 </body>

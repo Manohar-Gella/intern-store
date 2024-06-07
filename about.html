@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Gella Job Info</title>
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Add Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -12,16 +14,18 @@
             min-height: 100vh;
         }
         main {
-            flex-grow: 1;
+            flex: 1;
         }
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .sidebar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .about-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+        .sidebar-hidden {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .sidebar-visible {
+            transform: translateX(0);
+            opacity: 1;
         }
     </style>
 </head>
@@ -29,24 +33,49 @@
     <header class="bg-blue-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Gella Job Info</h1>
-            <nav class="space-x-4">
+            <button class="block md:hidden" id="nav-toggle">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M1 5a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 11a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 17a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <nav class="hidden md:flex space-x-4 nav-menu">
                 <a href="index.html" class="hover:underline">Home</a>
                 <a href="about.html" class="hover:underline">About</a>
                 <a href="contact.html" class="hover:underline">Contact</a>
             </nav>
         </div>
     </header>
+    <div class="sidebar bg-blue-800 text-white p-4 fixed top-0 left-0 h-full w-64 sidebar-hidden md:hidden">
+        <ul class="flex flex-col space-y-2">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
     <main class="container mx-auto my-8">
-        <div class="about-content">
-            <h2 class="text-3xl font-bold mb-4">About Us</h2>
-            <p>Welcome to Gella Job Info, your go-to portal for career options and insights for computer science students and enthusiasts!</p>
-            <p>This platform was created to provide valuable resources and opportunities for those pursuing careers in computer science. Whether you're seeking internships, job openings, or simply looking to stay updated with the latest trends and news in the industry, Gella Job Info has got you covered.</p>
-            <p>Our mission is to empower individuals with the knowledge and tools they need to succeed in the rapidly evolving field of computer science. We believe that by sharing information and fostering a supportive community, we can help aspiring professionals reach their full potential.</p>
-            <p>Feel free to explore our website, browse through our curated listings, and connect with us on social media. We're here to support you on your journey towards a rewarding career in computer science!</p>
+        <div class="about-content bg-white p-8 rounded shadow-lg">
+            <h2 class="text-3xl font-bold mb-6">About Us</h2>
+            <p class="mb-4">Welcome to <strong>Gella Job Info</strong>, your go-to portal for career options and insights for computer science students and enthusiasts!</p>
+            <p class="mb-4">This site is developed as a pet open-source project to help fellow students and professionals in the field of computer science find internship and job opportunities.</p>
+            <p class="mb-4">Whether you are a student looking for internships or a professional seeking new career paths, Gella Job Info is here to provide valuable resources and information to guide you on your journey.</p>
+            <p class="mb-4">Feel free to explore the site, contribute to the project, and share it with others who might benefit from the information provided. Together, we can build a supportive community for career development in the tech industry.</p>
         </div>
     </main>
-    <footer class="bg-blue-800 text-white text-center p-4">
+    <footer class="bg-blue-800 text-white text-center p-4 mt-auto">
         <p>&copy; 2024 Gella Job Info. All Rights Reserved.</p>
     </footer>
+    <script>
+        // JavaScript to toggle sidebar on mobile
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar.classList.contains('sidebar-hidden')) {
+                sidebar.classList.remove('sidebar-hidden');
+                sidebar.classList.add('sidebar-visible');
+            } else {
+                sidebar.classList.remove('sidebar-visible');
+                sidebar.classList.add('sidebar-hidden');
+            }
+        });
+    </script>
 </body>
 </html>
