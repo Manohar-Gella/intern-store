@@ -2,7 +2,7 @@
 
 Welcome to **Gella Job Info**! This project is a labor of love, designed to help computer science students and enthusiasts (like myself) find and share career resources, internships, and job opportunities. Plus, who doesn't love a good meme?
 
-![Job Hunt Meme](https://media.giphy.com/media/WlGbrDWKKexOU/giphy.gif)
+![Job Hunt Meme](https://pbs.twimg.com/media/FqI3bhBaQAAy1FC.jpg:large)
 
 ## About Gella Job Info
 
