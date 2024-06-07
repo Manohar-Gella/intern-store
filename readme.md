@@ -83,6 +83,6 @@ This project is open-source, so go ahead, clone it, fork it, star it, and don't 
 
 ---
 
-![Open Source Meme](https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif)
+![Open Source Meme](https://external-preview.redd.it/tsfBgr1ujHXD2S7C3mLGMveWM5NETvk5qy8IqQ-9EP8.png?auto=webp&s=59853ba0ee06379a39498a703b0b9aaafcbd875b)
 
 Happy coding! 🚀
