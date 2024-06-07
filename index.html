@@ -3,27 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gella Job Info</title>
+    <title>About - Gella Job Info</title>
     <link href="css/styles.css" rel="stylesheet">
-    <link rel="icon" href="itme.png">
+    <!-- Add Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for mobile navigation */
+        @media screen and (max-width: 640px) {
+            .desktop-nav {
+                display: none;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .sidebar {
+                display: none;
+            }
+            .sidebar.active {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold">Gella Job Info</h1>
-            <nav class="space-x-4">
+            <button class="block md:hidden nav-toggle">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M1 5a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 11a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 17a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            <nav class="hidden md:flex space-x-4 nav-menu desktop-nav">
                 <a href="index.html" class="hover:underline">Home</a>
                 <a href="about.html" class="hover:underline">About</a>
                 <a href="contact.html" class="hover:underline">Contact</a>
             </nav>
         </div>
     </header>
-    <main class="container mx-auto my-8 p-4 bg-white shadow-lg rounded-lg">
-        <h2 class="text-3xl font-bold mb-4">Welcome to Gella Job Info!</h2>
-        <p class="text-gray-700">This is a sample responsive website template.</p>
+    <main class="container mx-auto my-8">
+        <div class="about-content">
+            <h2 class="text-3xl font-bold mb-4">About Us</h2>
+            <p>Welcome to Gella Job Info, your go-to portal for career options and insights for computer science students and enthusiasts!</p>
+            <!-- Remaining content... -->
+        </div>
     </main>
-    <footer class="bg-blue-800 text-white text-center p-4 mt-8">
+    <footer class="bg-blue-800 text-white text-center p-4">
         <p>&copy; 2024 Gella Job Info. All Rights Reserved.</p>
     </footer>
+    <div class="sidebar bg-blue-800 text-white p-4 hidden">
+        <ul class="flex flex-col space-y-2">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <script>
+        // JavaScript to toggle sidebar on mobile
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
