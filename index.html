@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Gella Job Info</title>
+    <title>Gella Intern Info - Home</title>
     <link href="css/styles.css" rel="stylesheet">
     <!-- Add Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
@@ -27,12 +27,16 @@
             transform: translateX(0);
             opacity: 1;
         }
+        .card {
+            padding: 1rem;
+            margin: 1rem;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Gella Job Info</h1>
+            <h1 class="text-2xl font-bold">Gella Intern Info</h1>
             <button class="block md:hidden" id="nav-toggle">
                 <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M1 5a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 11a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1zM1 17a1 1 0 011-1h20a1 1 0 110 2H2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -53,14 +57,61 @@
         </ul>
     </div>
     <main class="container mx-auto my-8">
-        <div class="home-content">
-            <h2 class="text-3xl font-bold mb-4">Welcome to Gella Job Info</h2>
-            <p>Your go-to portal for career options and insights for computer science students and enthusiasts!</p>
-            <!-- Remaining content... -->
+        <h2 class="text-3xl font-bold mb-8 text-center">Intern Opportunities</h2>
+        <!-- col - 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/slaesforce.png" alt="Company 1" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 1</h3>
+                <div class="text-center">
+                    <a href="company1.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/tekion.png" alt="Company 2" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 2</h3>
+                <div class="text-center">
+                    <a href="company2.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/amazon.png" alt="Company 3" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 3</h3>
+                <div class="text-center">
+                    <a href="company3.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
         </div>
+
+
+        <!-- col 2 -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/dpw.png" alt="Company 1" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 1</h3>
+                <div class="text-center">
+                    <a href="company1.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/2.png" alt="Company 2" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 2</h3>
+                <div class="text-center">
+                    <a href="company2.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card">
+                <img src="src/img/3.png" alt="Company 3" class="w-full h-40 object-cover rounded-t-lg">
+                <h3 class="text-xl font-semibold mt-4 text-center">Company 3</h3>
+                <div class="text-center">
+                    <a href="company3.html" class="mt-4 inline-block bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Know More</a>
+                </div>
+            </div>
+        </div>
+
     </main>
-    <footer class="bg-blue-800 text-white text-center p-4">
-        <p>&copy; 2024 Gella Job Info. All Rights Reserved.</p>
+    <footer class="bg-blue-800 text-white text-center p-4 mt-auto">
+        <p>&copy; 2024 Gella Intern Info. All Rights Reserved.</p>
     </footer>
     <script>
         // JavaScript to toggle sidebar on mobile
