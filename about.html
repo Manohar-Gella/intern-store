@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Gella Job Info</title>
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-800 text-white p-4">
@@ -17,19 +36,16 @@
             </nav>
         </div>
     </header>
-    <main class="container mx-auto my-8 p-4 bg-white shadow-lg rounded-lg">
-        <h2 class="text-3xl font-bold mb-4">About Gella Job Info</h2>
-        <p class="text-gray-700 mb-4">
-            Welcome to Gella Job Info, an open-source project dedicated to providing career resources for computer science students and enthusiasts.
-        </p>
-        <p class="text-gray-700 mb-4">
-            As a computer science student myself, I created this platform to store and organize various career options within the field of computer science. Whether you're exploring potential career paths, seeking internships, or planning your next career move, Gella Job Info is here to assist you.
-        </p>
-        <p class="text-gray-700">
-            This project aims to centralize information about different job roles, industries, and companies relevant to computer science professionals. Feel free to explore the curated collection of career options and contribute your own findings to help others in their career journey.
-        </p>
+    <main class="container mx-auto my-8">
+        <div class="about-content">
+            <h2 class="text-3xl font-bold mb-4">About Us</h2>
+            <p>Welcome to Gella Job Info, your go-to portal for career options and insights for computer science students and enthusiasts!</p>
+            <p>This platform was created to provide valuable resources and opportunities for those pursuing careers in computer science. Whether you're seeking internships, job openings, or simply looking to stay updated with the latest trends and news in the industry, Gella Job Info has got you covered.</p>
+            <p>Our mission is to empower individuals with the knowledge and tools they need to succeed in the rapidly evolving field of computer science. We believe that by sharing information and fostering a supportive community, we can help aspiring professionals reach their full potential.</p>
+            <p>Feel free to explore our website, browse through our curated listings, and connect with us on social media. We're here to support you on your journey towards a rewarding career in computer science!</p>
+        </div>
     </main>
-    <footer class="bg-blue-800 text-white text-center p-4 mt-8">
+    <footer class="bg-blue-800 text-white text-center p-4">
         <p>&copy; 2024 Gella Job Info. All Rights Reserved.</p>
     </footer>
 </body>
